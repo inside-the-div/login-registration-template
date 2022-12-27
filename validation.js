@@ -35,7 +35,7 @@ function ValidateRegistrationForm(){
 	var	emailValidationMessage;
 
 	if(RegiName == ""){
-		ShowErrorMessage('RegiName',"Please fill the name filed");
+		ShowErrorMessage('RegiName',"Please fill the filed.");
 		return false;
 	}else if(RegiName.length < 3 || RegiName.length > 20){
 		ShowErrorMessage('RegiName',"Name should be minimum 3 and maximum 20 characters long.");
@@ -60,8 +60,9 @@ function ValidateRegistrationForm(){
 		ShowErrorMessage('RegiConfirmPassword',ConfirmPasswordMessage);
 		return false;
 	}
+	
 	if(RegiPassword != RegiConfirmPassword){
-		ShowErrorMessage('RegiConfirmPassword',"Password not matched.");
+		ShowErrorMessage('RegiConfirmPassword',"Password not match.");
 		return false;
 	}
 
@@ -107,8 +108,9 @@ function ValidateResetPasswordForm(){
 		ShowErrorMessage('ConfirmNewPassword',ConfirmPasswordMessage);
 		return false;
 	}
+
 	if(NewPassword != ConfirmNewPassword){
-		ShowErrorMessage('ConfirmNewPassword',"Password not matched.");
+		ShowErrorMessage('ConfirmNewPassword',"Password not match.");
 		return false;
 	}
 
@@ -150,13 +152,14 @@ function isValidEmail(email){
 	const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 	if(email == ""){
-		return "Please fill the email field.";
+		return "Please fill the field.";
 	}
-	else if(emailRegex.test(email) == false){
+
+	if(emailRegex.test(email) == false){
 		return "This is not a valid email.";
-	}else{
-		return "valid";
 	}
+
+	return "valid";
 }
 
 function isValidPassword(password) {
@@ -166,12 +169,13 @@ function isValidPassword(password) {
 	const letterNumberRegexSpecialChar = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/;
 
 	if(password == ""){
-		return "Please fill the password field."
+		return "Please fill field."
 	}
 
 	if (password.length < minLength || password.length > maxLength) {
 		return "Password length should be minimum 8 & maximum 32 characters.";
 	}
+
 	if (!letterNumberRegexSpecialChar.test(password)) {
 		return "Password should contain alphabetic and numeric characters.";
 	}
