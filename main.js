@@ -1,27 +1,9 @@
-const url = new URL(window.location.href);
-const actionFrom = url.searchParams.get('actionFrom');
-
-if(actionFrom != null && actionFrom == "login"){
-	ShowLoginForm();
-}else if(actionFrom != null && actionFrom == "registration"){
-	ShowRegistrationForm();
-}else if(actionFrom != null && actionFrom == "forgot-password"){
-	ShowForgotPasswordForm();
-}else if(actionFrom != null && actionFrom == "reset-password"){
-	ShowResetPasswordForm();
-}else{
-	ShowLoginForm();
-}
-
 function ShowLoginForm(){
-
-	var formTitle = document.getElementById('formTitle');
-	formTitle.innerHTML = "Login";
+	
+	SetTitle("Login");
 
 	ShowHideForm("LoginFrom","Show");
-
 	ShowHideForm("RegistrationFrom","Hide");
-	ShowHideForm("ResetPasswordForm","Hide");
 	ShowHideForm("ForgotPasswordForm","Hide");
 
 	ActiveInactiveBtn("ShowLoginBtn","Active");
@@ -31,12 +13,11 @@ function ShowLoginForm(){
 };
 
 function ShowRegistrationForm(){
-	var formTitle = document.getElementById('formTitle');
-	formTitle.innerHTML = "Registration";
+	debugger;
+	SetTitle("Registration");
 
 	ShowHideForm("RegistrationFrom","Show");
 	ShowHideForm("LoginFrom","Hide");
-	ShowHideForm("ResetPasswordForm","Hide");
 	ShowHideForm("ForgotPasswordForm","Hide");
 
 	ActiveInactiveBtn("ShowLoginBtn","Inactive");
@@ -46,12 +27,11 @@ function ShowRegistrationForm(){
 };
 
 function ShowForgotPasswordForm() {
-	var formTitle = document.getElementById('formTitle');
-	formTitle.innerHTML = "Forgot Password";
+	
+	SetTitle("Forgot Password");
 
 	ShowHideForm("RegistrationFrom","Hide");
 	ShowHideForm("LoginFrom","Hide");
-	ShowHideForm("ResetPasswordForm","Hide");
 	ShowHideForm("ForgotPasswordForm","Show");
 
 	ActiveInactiveBtn("ShowLoginBtn","Inactive");
@@ -59,18 +39,9 @@ function ShowForgotPasswordForm() {
 	ShowHideFromSwitchBtn("Hide");
 }
 
-function ShowResetPasswordForm(){
+function SetTitle(Title){
 	var formTitle = document.getElementById('formTitle');
-	formTitle.innerHTML = "Reset Password";
-
-	ShowHideForm("RegistrationFrom","Hide");
-	ShowHideForm("LoginFrom","Hide");
-	ShowHideForm("ForgotPasswordForm","Hide");
-	ShowHideForm("ResetPasswordForm","Show");
-
-	ActiveInactiveBtn("ShowLoginBtn","Inactive");
-	ActiveInactiveBtn("ShowRegistrationBtn","Inactive");
-	ShowHideFromSwitchBtn("Hide");
+	formTitle.innerHTML = Title;
 }
 
 function ShowHideForm(FormID,ShowOrHide){
@@ -84,6 +55,7 @@ function ShowHideForm(FormID,ShowOrHide){
 }
 
 function ActiveInactiveBtn(ButtonID,ActiveORInactive) {
+	debugger;
 	var Button = document.getElementById(ButtonID);
 
 	if(ActiveORInactive == "Active"){

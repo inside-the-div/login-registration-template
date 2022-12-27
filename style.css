@@ -44,23 +44,19 @@
 	justify-content: center;
 	padding: 20px 0px;
 }
-#formSwitchBtn a{
+#formSwitchBtn button{
 	font-size: 17px;
 	letter-spacing: 1px;
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: bolder;
 	width: 160px;
 	height: 40px;
-	line-height: 40px;
-	text-align: center;
 	border: 0px;
 	cursor: pointer;
 	position: relative;
 	background: transparent;
 	border: 1px solid #747474;
 	transition: 0.4s;
-	text-decoration: none;
-	color: #333;
 }
 #formSwitchBtn .active{
 	color: #fff;
@@ -150,7 +146,6 @@
 }
 
 #RegistrationFrom,
-#ResetPasswordForm,
 #ForgotPasswordForm{
 	display: none;
 }

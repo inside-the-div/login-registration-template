@@ -11,8 +11,8 @@
 		<div id="LoginAndRegistrationForm">
 			<h1 id="formTitle">Login</h1>
 			<div id="formSwitchBtn">
-				<a href="index.html?actionFrom=login" id="ShowLoginBtn" class="active">Login</a>
-				<a href="index.html?actionFrom=registration"  id="ShowRegistrationBtn" class="">Registration</a>
+				<button onclick="ShowLoginForm()"  id="ShowLoginBtn" class="active">Login</button>
+				<button onclick="ShowRegistrationForm()"  id="ShowRegistrationBtn">Registration</button>
 			</div>
 			<div id="LoginFrom">
 				<form action="#">
@@ -23,7 +23,7 @@
 					
 					<div class="forgot-pass-remember-me mt-10">
 						<div class="forgot-pass">
-							<a id="ForgotPassword" href="index.html?actionFrom=forgot-password">Forgot Password?</a>
+							<a id="ForgotPassword" href="JavaScript:void(0);" onclick="ShowForgotPasswordForm()" >Forgot Password?</a>
 						</div>
 						<div class="remember-me">
 							<input id="rememberMe" type="checkbox">
@@ -37,7 +37,7 @@
 				</form>
 				<p class="center mt-20 dont-have-account">
 					Don't have an account? 
-					<a href="index.html?actionFrom=registration">Registration now</a>
+					<a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Registration now</a>
 				</p>
 			</div>
 			<div id="RegistrationFrom">
@@ -54,7 +54,7 @@
 				</form>
 				<p class="center mt-20 already-have-account">
 					Already have an account? 
-					<a href="index.html?actionFrom=login">Login now</a>
+					<a href="#" onclick="ShowLoginForm()">Login now</a>
 				</p>
 			</div>
 			<div id="ForgotPasswordForm">
@@ -68,26 +68,9 @@
 				</form>
 				<p class="center mt-20 already-have-account">
 					Back to the 
-					<a href="index.html?actionFrom=login">Login page</a> | <a href="index.html?actionFrom=registration">Registration page</a>
+					<a href="JavaScript:void(0);" onclick="ShowLoginForm()">Login page</a> | <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Registration page</a>
 				</p>
 			</div>
-
-			<div id="ResetPasswordForm">
-				<form action="">
-					<div class="center">
-						<input id="NewPassword" class="mt-10 input-text" type="password" placeholder="New Password">
-						<input id="ConfirmNewPassword" class="mt-10 input-text" type="password" placeholder="Confirm Password">
-					</div>
-					<div class="center mt-20">
-						<input onclick="return ValidateResetPasswordForm();" class="Submit-Btn" type="submit" value="Change" id="PasswordChangeBtn">
-					</div>
-				</form>
-				<p class="center mt-20 already-have-account">
-					Back to the 
-					<a href="index.html?actionFrom=login">Login page</a> | <a href="index.html?actionFrom=registration">Registration page</a>
-				</p>
-			</div>
-
 		</div>
 	</div>
 
