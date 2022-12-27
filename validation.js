@@ -60,7 +60,7 @@ function ValidateRegistrationForm(){
 		ShowErrorMessage('RegiConfirmPassword',ConfirmPasswordMessage);
 		return false;
 	}
-	
+
 	if(RegiPassword != RegiConfirmPassword){
 		ShowErrorMessage('RegiConfirmPassword',"Password not match.");
 		return false;
@@ -177,7 +177,7 @@ function isValidPassword(password) {
 	}
 
 	if (!letterNumberRegexSpecialChar.test(password)) {
-		return "Password should contain alphabetic and numeric characters.";
+		return "Password should contain alphabetic, numeric and special characters.";
 	}
 	return "valid";
 }
