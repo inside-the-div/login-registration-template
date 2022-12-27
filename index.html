@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login & Registration</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div id="LoginAndRegistrationForm">
+			<h1 id="formTitle">Login</h1>
+			<div id="formSwitchBtn">
+				<a href="index.html?actionFrom=login" id="ShowLoginBtn" class="active">Login</a>
+				<a href="index.html?actionFrom=registration"  id="ShowRegistrationBtn" class="">Registration</a>
+			</div>
+			<div id="LoginFrom">
+				<form action="#">
+					<div class="center">
+						<input id="LoginEmail" class="input-text" type="text" placeholder="Email Address"> 
+						<input id="LoginPassword" class="mt-10 input-text" type="password" placeholder="Password">
+					</div>
+					
+					<div class="forgot-pass-remember-me mt-10">
+						<div class="forgot-pass">
+							<a id="ForgotPassword" href="index.html?actionFrom=forgot-password">Forgot Password?</a>
+						</div>
+						<div class="remember-me">
+							<input id="rememberMe" type="checkbox">
+							<label for="rememberMe">Remember Me</label>
+						</div>
+					</div>
+
+					<div class="center mt-20">
+						<input onclick="return ValidateLoginForm();"  class="Submit-Btn" type="submit" value="Login" id="LoginBtn">
+					</div>
+				</form>
+				<p class="center mt-20 dont-have-account">
+					Don't have an account? 
+					<a href="index.html?actionFrom=registration">Registration now</a>
+				</p>
+			</div>
+			<div id="RegistrationFrom">
+				<form action="#">
+					<div class="center">
+						<input id="RegiName" class="input-text" type="text" placeholder="Full Name">
+						<input id="RegiEmailAddres" class="input-text mt-10" type="email" placeholder="Email Address">
+						<input id="RegiPassword" class="mt-10 input-text" type="password" placeholder="Password">
+						<input id="RegiConfirmPassword" class="mt-10 input-text" type="password" placeholder="Confirm Password">
+					</div>
+					<div class="center mt-20">
+						<input onclick="return ValidateRegistrationForm();" class="Submit-Btn" type="submit" value="Registration" id="RegistrationitBtn">
+					</div>
+				</form>
+				<p class="center mt-20 already-have-account">
+					Already have an account? 
+					<a href="index.html?actionFrom=login">Login now</a>
+				</p>
+			</div>
+			<div id="ForgotPasswordForm">
+				<form action="">
+					<div class="center mt-20">
+						<input class="input-text " type="email" id="forgotPassEmail" placeholder="Email Address">
+					</div>
+					<div class="center mt-20">
+						<input onclick="return ValidateForgotPasswordForm();" class="Submit-Btn" type="submit" value="Reset Password" id="PasswordResetBtn" >
+					</div>
+				</form>
+				<p class="center mt-20 already-have-account">
+					Back to the 
+					<a href="index.html?actionFrom=login">Login page</a> | <a href="index.html?actionFrom=registration">Registration page</a>
+				</p>
+			</div>
+
+			<div id="ResetPasswordForm">
+				<form action="">
+					<div class="center">
+						<input id="NewPassword" class="mt-10 input-text" type="password" placeholder="New Password">
+						<input id="ConfirmNewPassword" class="mt-10 input-text" type="password" placeholder="Confirm Password">
+					</div>
+					<div class="center mt-20">
+						<input onclick="return ValidateResetPasswordForm();" class="Submit-Btn" type="submit" value="Change" id="PasswordChangeBtn">
+					</div>
+				</form>
+				<p class="center mt-20 already-have-account">
+					Back to the 
+					<a href="index.html?actionFrom=login">Login page</a> | <a href="index.html?actionFrom=registration">Registration page</a>
+				</p>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="main.js" type="text/javascript"></script>
+	<script src="validation.js" type="text/javascript"></script>
+</body>
+</html>
