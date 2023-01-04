@@ -169,7 +169,7 @@ function isValidPassword(password) {
 	const letterNumberRegexSpecialChar = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/;
 
 	if(password == ""){
-		return "Please fill field."
+		return "Please fill the field."
 	}
 
 	if (password.length < minLength || password.length > maxLength) {
